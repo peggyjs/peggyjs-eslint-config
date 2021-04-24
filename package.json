@@ -1,0 +1,13 @@
+{
+  "name": "@peggyjs/eslint-config",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "peggy",
+    "eslint"
+  ],
+  "author": "Joe Hildebrand <joe-github@cursive.net>",
+  "license": "MIT",
+  "repository": "peggyjs/peggyjs-eslint-config"
+}
