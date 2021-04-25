@@ -468,13 +468,7 @@ module.exports = {
     "no-useless-constructor": "error",
     "no-useless-rename": "error",
     "no-var": "error",
-
-    // Set not to require shorthands for properties because their syntax is
-    // misleading. It conflates together a key name and a variable name, which
-    // are the same only by coincidence and represent completely different
-    // things with different reasons for change. Method shorthands are fine in
-    // this respect (they only save typing a colon and the `function` keyword).
-    "object-shorthand": ["error", "methods"],
+    "object-shorthand": ["error", "always"],
 
     // Disabled because there are frameworks like Mocha that use callbacks
     // extensively yet these callbacks can't be arrow functions because the
