@@ -3,7 +3,7 @@
 module.exports = {
   env: {
     node: true,
-    es6: true
+    es6: true,
   },
   parserOptions: {
     ecmaVersion: 2015,
@@ -27,9 +27,16 @@ module.exports = {
   // version of the configuration ever gets produced.
   //
   // [1] http://eslint.org/docs/rules/
+  // Up-to-date as of eslint 7.27.0
   rules: {
     // ----- Possible Errors -----
+    "for-direction": "error",
+    "getter-return": "error",
+    "no-async-promise-executor": "error",
 
+    // Disabled because await in loops have legitimate uses.
+    "no-await-in-loop": "off",
+    "no-compare-neg-zero": "error",
     "no-cond-assign": "error",
 
     // Disabled because `console` has legitimate uses.
@@ -41,10 +48,11 @@ module.exports = {
     "no-control-regex": "off",
     "no-debugger": "error",
     "no-dupe-args": "error",
+    "no-dupe-else-if": "error",
     "no-dupe-keys": "error",
     "no-duplicate-case": "error",
-    "no-empty-character-class": "error",
     "no-empty": "error",
+    "no-empty-character-class": "error",
     "no-ex-assign": "error",
     "no-extra-boolean-cast": "error",
 
@@ -52,6 +60,7 @@ module.exports = {
     "no-extra-parens": "off",
     "no-extra-semi": "error",
     "no-func-assign": "error",
+    "no-import-assign": "error",
 
     // Set to catch both `function` and `var` declarations in nested blocks,
     // however catching `var` declarations isn't strictly necessary because they
@@ -69,21 +78,28 @@ module.exports = {
         skipTemplates: false,
       },
     ],
+    "no-loss-of-precision": "error",
+    "no-misleading-character-class": "error",
     "no-obj-calls": "error",
+    "no-promise-executor-return": "error",
     "no-prototype-builtins": "error",
 
     // Disabled because when matching an exact number of spaces, writing them
     // out is usually better than using the `{n}` syntax. It makes the regexp
     // more similar to matched strings.
     "no-regex-spaces": "off",
+    "no-setter-return": "error",
     "no-sparse-arrays": "error",
     "no-template-curly-in-strings": "off",
     "no-unexpected-multiline": "error",
     "no-unreachable": "error",
+    "no-unreachable-loop": "off",
     "no-unsafe-finally": "error",
     "no-unsafe-negation": "error",
+    "no-unsafe-optional-chaining": "error",
+    "no-useless-backreference": "error",
+    "require-atomic-updates": "off",
     "use-isnan": "error",
-    "valid-jsdoc": "error",
     "valid-typeof": "error",
 
     // ----- Best Practices -----
@@ -98,7 +114,6 @@ module.exports = {
     //
     // @es5
     "block-scoped-var": "error",
-
     // Disabled because class methods without `this` have legitimate uses, for
     // example when a class has to implement a dummy empty method to conform to
     // an interface.
@@ -109,18 +124,25 @@ module.exports = {
     "consistent-return": "error",
     "curly": "error",
     "default-case": "error",
+    "default-case-last": "error",
+    "default-param-last": "error",
     "dot-location": ["error", "property"],
     "dot-notation": "error",
     "eqeqeq": "error",
+    "grouped-accessor-pairs": "error",
 
     // Enabled, but it's better to use `Object.keys(...).forEach` instead of
     // `for...in`.
     "guard-for-in": "error",
 
+    // Trust the developer to do the right thing
+    "max-classes-per-file": "off",
+
     // Disabled because `alert`, `prompt`, and `confirm` have legitimate uses.
     "no-alert": "off",
     "no-caller": "error",
     "no-case-declarations": "error",
+    "no-constructor-return": "error",
     "no-div-regex": "off",
 
     // Disabled because whether an `if` statement does or does not have an
@@ -190,13 +212,14 @@ module.exports = {
     // Disabled because multiple spaces are often used for alignment.
     "no-multi-spaces": "off",
     "no-multi-str": "error",
+    "no-new": "error",
 
     // Disabled because `Function` constructor has legitimate uses.
     "no-new-func": "off",
     "no-new-wrappers": "error",
-    "no-new": "error",
-    "no-octal-escape": "error",
+    "no-nonoctal-decimal-escape": "error",
     "no-octal": "error",
+    "no-octal-escape": "error",
 
     // Disabled because reassigning parameters is occasionally useful, e.g.
     // when setting default values or when transforming a parameter that can be
@@ -206,6 +229,7 @@ module.exports = {
     "no-redeclare": "error",
     "no-restricted-properties": "off",
     "no-return-assign": "error",
+    "no-return-await": "error",
     "no-script-url": "error",
     "no-self-assign": "error",
     "no-self-compare": "error",
@@ -215,15 +239,27 @@ module.exports = {
     "no-unused-expressions": "error",
     "no-unused-labels": "error",
     "no-useless-call": "error",
+    "no-useless-catch": "error",
     "no-useless-concat": "error",
     "no-useless-escape": "error",
+    "no-useless-return": "error",
     "no-void": "error",
     "no-warning-comments": "error",
     "no-with": "error",
 
+    // Leave off until all of our supported browsers support it
+    "prefer-named-capture-group": "off",
+    "prefer-promise-reject-errors": "error",
+    "prefer-regex-literals": "error",
+
     // Set to require a radix even though it always defaults to 10 in ES5+. It
     // prevents confusion.
     "radix": "error",
+    "require-await": "error",
+
+    // Leave off until all of our supported browsers support it.  Even then,
+    // probably leave it off.
+    "require-unicode-regexp": "off",
 
     // Disabled because while putting variable declarations at the top is
     // generally a good idea, it's not always practical. For example, modifying
@@ -244,7 +280,6 @@ module.exports = {
     // ----- Variables -----
 
     "init-declarations": "off",
-    "no-catch-shadow": "off",
 
     // Enabled, however this isn't strictly necessary because strict mode parser
     // doesn't allow to use `delete` with an unqualified identifier. But it
@@ -252,13 +287,13 @@ module.exports = {
     "no-delete-var": "error",
     "no-label-var": "error",
     "no-restricted-globals": "off",
-    "no-shadow-restricted-names": "error",
     "no-shadow": "off",
+    "no-shadow-restricted-names": "error",
+    "no-undef": "error",
 
     // Disabled because sometimes one wants to be explicit about initializing a
     // variable to `undefined`.
     "no-undef-init": "off",
-    "no-undef": "error",
     "no-undefined": "off",
     "no-unused-vars": "error",
 
@@ -267,45 +302,54 @@ module.exports = {
     // defined using variables (e.g. when created using a builder).
     "no-use-before-define": "off",
 
-    // ----- Node.js and CommonJS -----
+    // ----- Stylistic Issues -----
 
-    // Disabled because this is just guessing.
-    "callback-return": "off",
+    "array-bracket-newline": ["error", "consistent"],
+    "array-bracket-spacing": ["error", "never"],
 
-    // Disabled because one occasionally needs a non-global `require` call, e.g.
-    // when using an optional dependency, choosing from multiple alternative
-    // dependencies, or implementing a plugin system.
-    "global-require": "off",
+    // There are a few files where we use spacing in arrays to our advantage
+    "array-element-newline": "off",
+    "block-spacing": ["error", "always"],
+    "brace-style": ["error", "1tbs", {
+      "allowSingleLine": true,
+    }],
 
-    // Disabled because this is just guessing.
-    "handle-callback-err": "off",
-
-    // Enabled, however this isn't strictly necessary because `one-var` doesn't
-    // allow multiple `require` calls in one `let`/`const`/`var` statement. But
-    // it can't hurt.
-    "no-mixed-requires": "off",
-    "no-new-require": "error",
-
-    // Disabled because code using `path.join` is usually more verbose than
-    // string concatenation or template literals. In theory, `path.join` is more
-    // portable because it always uses correct path separator, but since Node.js
-    // on all platforms can deal with paths that use `/`, this is not really an
-    // advantage.
-    "no-path-concat": "off",
-
-    // Disabled because `process.env` has legitimate uses, mainly in binaries.
-    "no-process-env": "off",
-
-    // Disabled because `process.exit` has legitimate uses, mainly in binaries.
-    "no-process-exit": "off",
-    "no-restriced-modules": "off",
-    "no-sync": "off",
+    // We have underscores in our public API already
+    "camelcase": "off",
+    "capitalized-comments": ["error", "always", { ignoreConsecutiveComments: true }],
+    "comma-dangle": ["error", "always-multiline"],
+    "comma-spacing": "error",
+    "comma-style": "error",
+    "computed-property-spacing": "error",
+    "consistent-this": "off",
+    "eol-last": "error",
+    "func-call-spacing": "error",
+    "func-name-matching": "error",
+    "func-names": "off",
+    "func-style": "off",
+    "function-call-argument-newline": ["error", "consistent"],
+    "function-paren-newline": ["error", "consistent"],
+    "id-denylist": "off",
 
     // Disabled because code quality issues are generally not checked.
     "id-length": "off",
 
     // Disabled because it seems redundant with `camelcase`.
     "id-match": "off",
+    "implicit-arrow-linebreak": "error",
+    "indent": ["error", 2, {
+      SwitchCase: 1,
+      offsetTernaryExpressions: true,
+    }],
+    "jsx-quotes": "off",
+
+    // We sometimes align colons across larger areas than this can find
+    "key-spacing": "off",
+    "keyword-spacing": "error",
+    "line-comment-position": "off",
+    "linebreak-style": ["error", "unix"],
+    "lines-around-comment": "off",
+    "lines-between-class-members": "error",
 
     // Disabled because code quality issues are generally not checked.
     "max-depth": "off",
@@ -325,6 +369,7 @@ module.exports = {
 
     // Disabled because code quality issues are generally not checked.
     "max-lines": "off",
+    "max-lines-per-function": "off",
 
     // Disabled because code quality issues are generally not checked.
     "max-nested-callbacks": "off",
@@ -333,20 +378,14 @@ module.exports = {
     "max-params": "off",
 
     // Disabled because code quality issues are generally not checked.
-    "max-statements-per-line": "off",
+    "max-statements": "off",
 
     // Disabled because code quality issues are generally not checked.
-    "max-statements": "off",
-    "multiline-ternary": ["off"],
+    "max-statements-per-line": "off",
+    "multiline-comment-style": "off",
+    "multiline-ternary": ["error", "always-multiline"],
     "new-cap": ["error", { newIsCap: true, capIsNew: true, properties: true }],
     "new-parens": "error",
-
-    // Disabled because variable declarations are mostly treated as assignments.
-    // See `one-var`.
-    //
-    // @es5
-    "newline-after-var": "off",
-    "newline-before-return": "error",
     "newline-per-chained-call": "off",
     "no-array-constructor": "error",
 
@@ -383,6 +422,7 @@ module.exports = {
     "no-lonely-if": "off",
     "no-mixed-operators": "off",
     "no-mixed-spaces-and-tabs": "error",
+    "no-multi-assign": "error",
     "no-multiple-empty-lines": ["error", { max: 1 }],
 
     // Disabled because the usual rule is to put more important or common case
@@ -395,6 +435,7 @@ module.exports = {
     "no-restricted-syntax": "off",
     "no-tabs": "error",
     "no-ternary": "off",
+    "no-trailing-spaces": "error",
 
     // Disabled because leading underscores are used to mark private members in
     // classes and trailing underscores are used to avoid collisions with
@@ -402,14 +443,10 @@ module.exports = {
     "no-underscore-dangle": "off",
     "no-unneeded-ternary": "error",
     "no-whitespace-before-property": "error",
-    "object-curly-newline": "off",
+    "nonblock-statement-body-position": "error",
+    "object-curly-newline": "error",
     "object-curly-spacing": ["error", "always"],
     "object-property-newline": "off",
-
-    // Disabled because `one-var` doesn't allow multiple initialized variable
-    // declarations in one `let`/`const`/`var` statement and it doesn't make
-    // sense to put each uninitialized variable on a separate line.
-    "one-var-declaration-per-line": "off",
 
     // Set to split initialized variable declarations into separate
     // `let`/`const`/`var` statements while grouping uninitialized declarations
@@ -426,20 +463,28 @@ module.exports = {
     // assignment happens later. Here, it makes sense to save space and combine
     // all declared variables into one statement.
     "one-var": ["error", { initialized: "never", uninitialized: "always" }],
+
+    // Disabled because `one-var` doesn't allow multiple initialized variable
+    // declarations in one `let`/`const`/`var` statement and it doesn't make
+    // sense to put each uninitialized variable on a separate line.
+    "one-var-declaration-per-line": "off",
     "operator-assignment": ["error", "always"],
     "operator-linebreak": ["error", "before"],
     "padded-blocks": ["error", "never"],
+    "padding-line-between-statements": "off",
+    "prefer-exponentiation-operator": "off",
+    "prefer-object-spread": "error",
     "quote-props": ["error", "consistent"],
-    "quotes": ["error", "double"],
-    "require-jsdoc": "off",
-    "semi-spacing": ["error", { before: false, after: true }],
+    "quotes": ["error", "double", { avoidEscape: true }],
     "semi": ["error", "always"],
+    "semi-spacing": ["error", { before: false, after: true }],
+    "semi-style": "error",
     "sort-keys": "off",
     "sort-vars": "off",
     "space-before-blocks": ["error", "always"],
     "space-before-function-paren": ["error", "never"],
     "space-in-parens": ["error", "never"],
-    "space-infix-ops": "error",
+    "space-infix-ops": ["error", { "int32Hint": true }],
     "space-unary-ops": ["error", { words: true, nonwords: false }],
     "spaced-comment": [
       "error",
@@ -449,11 +494,16 @@ module.exports = {
         block: { markers: ["*"], balanced: true },
       },
     ],
+    "switch-colon-spacing": "error",
+    "template-tag-spacing": "error",
     "unicode-bom": ["error", "never"],
     "wrap-regex": "off",
 
     // ----- ECMAScript 6 -----
 
+    "arrow-body-style": "error",
+    "arrow-parens": ["error", "as-needed"],
+    "arrow-spacing": "error",
     "constructor-super": "error",
     "generator-star-spacing": ["error", "after"],
     "no-class-assign": "error",
@@ -462,6 +512,7 @@ module.exports = {
     "no-dupe-class-members": "error",
     "no-duplicate-imports": ["error", { includeExports: true }],
     "no-new-symbol": "error",
+    "no-restricted-exports": "off",
     "no-restricted-imports": "off",
     "no-this-before-super": "error",
     "no-useless-computed-key": "error",
@@ -469,27 +520,14 @@ module.exports = {
     "no-useless-rename": "error",
     "no-var": "error",
     "object-shorthand": ["error", "always"],
-
-    // Disabled because there are frameworks like Mocha that use callbacks
-    // extensively yet these callbacks can't be arrow functions because the
-    // framework sets `this` dynamically when calling them. This rule doesn't
-    // allow to make exceptions for these cases.
-    "prefer-arrow-callback": "off",
+    "prefer-arrow-callback": "error",
     "prefer-const": "error",
+
+    // This catches too many things that are ok.
+    "prefer-destructuring": "off",
     "prefer-numeric-literals": "error",
-
-    // Disabled because `Reflect` doesn't deprecate the old methods "enough",
-    // i.e. there is no clear advantage of using it. Moreover, `Reflect` is not
-    // supported in Node.js < 6.
-    "prefer-reflect": "off",
-
-    // Disabled because rest parameters are not supported in Node.js < 6 without
-    // a flag.
-    "prefer-rest-params": "off",
-
-    // Disabled because the spread operator is not supported in Node.js 4.x
-    // without a flag.
-    "prefer-spread": "off",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
 
     // Disabled because the decision between using string concatenation or a
     // template literal is a subtle one and it shouldn't be done mechanically.
