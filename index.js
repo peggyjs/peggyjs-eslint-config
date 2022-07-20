@@ -318,7 +318,11 @@ module.exports = {
 
     // We have underscores in our public API already
     "camelcase": "off",
-    "capitalized-comments": ["error", "always", { ignoreConsecutiveComments: true }],
+    "capitalized-comments": ["error", "always", {
+      ignorePattern: "c8",
+      ignoreConsecutiveComments: true,
+    }],
+
     "comma-dangle": ["error", {
       arrays: "always-multiline",
       objects: "always-multiline",
