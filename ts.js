@@ -41,6 +41,8 @@ module.exports = {
     }],
     "@typescript-eslint/ban-tslint-comment": "error",
     "@typescript-eslint/ban-types": "off", // Not needed
+    "block-spacing": "off",
+    "@typescript-eslint/block-spacing": ["error", "always"],
     "brace-style": "off",
     "@typescript-eslint/brace-style": ["error", "1tbs", {
       "allowSingleLine": true,
@@ -87,6 +89,7 @@ module.exports = {
     "@typescript-eslint/func-call-spacing": "error",
     "@typescript-eslint/indent": ["off", 2], // Broken, see https://github.com/typescript-eslint/typescript-eslint/issues/1824
     "@typescript-eslint/init-declarations": "error",
+    "@typescript-eslint/key-spacing": "off", // Off in JS
     "@typescript-eslint/keyword-spacing": "error",
     "@typescript-eslint/lines-between-class-members": "error",
     "@typescript-eslint/member-delimiter-style": "error",
@@ -113,6 +116,7 @@ module.exports = {
     "@typescript-eslint/no-floating-promises": "off", // Can't config
     "@typescript-eslint/no-for-in-array": "error",
     "@typescript-eslint/no-implied-eval": "off", // Can't config
+    "@typescript-eslint/no-import-type-side-effects": "error",
     "@typescript-eslint/no-inferrable-types": "error",
     "@typescript-eslint/no-invalid-this": "error",
     "@typescript-eslint/no-invalid-void-type": "error",
@@ -123,6 +127,7 @@ module.exports = {
     "@typescript-eslint/no-meaningless-void-operator": "off", // Can't config
     "@typescript-eslint/no-misused-new": "error",
     "@typescript-eslint/no-misused-promises": "off", // Can't config
+    "@typescript-eslint/no-mixed-enums": "error",
     "@typescript-eslint/no-namespace": "error",
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
     "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
@@ -144,6 +149,7 @@ module.exports = {
     "@typescript-eslint/no-unsafe-argument": "off", // Can't config
     "@typescript-eslint/no-unsafe-assignment": "off", // Can't config
     "@typescript-eslint/no-unsafe-call": "off", // Can't config
+    "@typescript-eslint/no-unsafe-declaration-merging": "error",
     "@typescript-eslint/no-unsafe-member-access": "off", // Can't config
     "@typescript-eslint/no-unsafe-return": "off", // Can't config
     "@typescript-eslint/no-unused-expressions": "error",
@@ -184,6 +190,7 @@ module.exports = {
     "@typescript-eslint/return-await": "off", // Can't config
     "semi": "off",
     "@typescript-eslint/semi": ["error", "always"],
+    "@typescript-eslint/sort-type-constituents": "error",
     "@typescript-eslint/sort-type-union-intersection-members": "error",
     "@typescript-eslint/space-before-blocks": "error",
     "space-before-function-paren": "off",
