@@ -14,6 +14,8 @@ module.exports = {
         // Easier than fixing the hand-generated peg.d.ts
         "no-unused-vars": "off",
         "one-var": "off",
+        "no-use-before-define": "off",
+        "init-declarations": "off",
         "@typescript-eslint/no-unused-vars": "off",
         "@typescript-eslint/init-declarations": "off",
         "@typescript-eslint/no-empty-interface": "off",

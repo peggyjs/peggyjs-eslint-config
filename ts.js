@@ -127,7 +127,7 @@ module.exports = {
     "@typescript-eslint/no-meaningless-void-operator": "off", // Can't config
     "@typescript-eslint/no-misused-new": "error",
     "@typescript-eslint/no-misused-promises": "off", // Can't config
-    "@typescript-eslint/no-mixed-enums": "error",
+    "@typescript-eslint/no-mixed-enums": "off", // Needs parser
     "@typescript-eslint/no-namespace": "error",
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
     "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
@@ -136,6 +136,7 @@ module.exports = {
     "@typescript-eslint/no-redundant-type-constituents": "off", // Can't config
     "@typescript-eslint/no-require-imports": "error",
     "@typescript-eslint/no-restricted-imports": "off", // Not needed
+    "no-shadow": "off",
     "@typescript-eslint/no-shadow": "error",
     "@typescript-eslint/no-this-alias": "error",
     "@typescript-eslint/no-throw-literal": "off", // Can't config
