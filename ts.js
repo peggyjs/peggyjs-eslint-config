@@ -91,6 +91,7 @@ module.exports = {
     "@typescript-eslint/init-declarations": "error",
     "@typescript-eslint/key-spacing": "off", // Off in JS
     "@typescript-eslint/keyword-spacing": "error",
+    "@typescript-eslint/lines-around-comment": "off", // Big changes in .d.ts
     "@typescript-eslint/lines-between-class-members": "error",
     "@typescript-eslint/member-delimiter-style": "error",
     "@typescript-eslint/member-ordering": "error",

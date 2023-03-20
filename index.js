@@ -324,7 +324,7 @@ module.exports = {
     "no-return-await": "error",
     "no-script-url": "error",
     "no-sequences": "error",
-    "no-shadow": "error",
+    "no-shadow": "off", // Disable for now.
     "no-shadow-restricted-names": "error",
     "no-ternary": "off", // Nah.
     "no-throw-literal": "error",
