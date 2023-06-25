@@ -104,6 +104,7 @@ module.exports = {
     "@typescript-eslint/no-confusing-void-expression": "off", // Can't config
     "@typescript-eslint/no-dupe-class-members": "error",
     "@typescript-eslint/no-duplicate-enum-values": "error",
+    "@typescript-eslint/no-duplicate-type-constituents": "error",
     "@typescript-eslint/no-dynamic-delete": "error",
     "no-empty-function": "off",
     "@typescript-eslint/no-empty-function": "error",
@@ -152,6 +153,7 @@ module.exports = {
     "@typescript-eslint/no-unsafe-assignment": "off", // Can't config
     "@typescript-eslint/no-unsafe-call": "off", // Can't config
     "@typescript-eslint/no-unsafe-declaration-merging": "error",
+    "@typescript-eslint/no-unsafe-enum-comparison": "error",
     "@typescript-eslint/no-unsafe-member-access": "off", // Can't config
     "@typescript-eslint/no-unsafe-return": "off", // Can't config
     "@typescript-eslint/no-unused-expressions": "error",
