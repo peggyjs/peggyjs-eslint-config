@@ -1,0 +1,32 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: ['*']
+
+jobs:
+  build:
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - name: Install dependencies
+        run: npm install && cd test && npm install
+      - name: Check coding standards
+        run: npm run lint
+      - name: Test
+        run: npm run test

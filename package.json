@@ -11,7 +11,8 @@
     "lint": "eslint . --ext js",
     "missing": "npm run missing:js && npm run missing:ts",
     "missing:js": "eslint-find-rules --verbose -u index.js",
-    "missing:ts": "eslint-find-rules --verbose -u ts.js | grep -v https://eslint.org/docs/rules/"
+    "missing:ts": "eslint-find-rules --verbose -u ts.js | grep -v https://eslint.org/docs/rules/",
+    "test": "eslint test --ext js,ts"
   },
   "author": "Joe Hildebrand <joe-github@cursive.net>",
   "license": "MIT",
