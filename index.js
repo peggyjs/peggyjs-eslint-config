@@ -6,7 +6,7 @@ module.exports = {
     es6: true,
   },
   parserOptions: {
-    ecmaVersion: 2015,
+    ecmaVersion: 2018,
   },
 
   // All ESLint rules are explicitly configured here. They are structured in the
