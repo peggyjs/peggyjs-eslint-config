@@ -48,6 +48,8 @@ module.exports = {
       "allowSingleLine": true,
     }],
     "@typescript-eslint/class-literal-property-style": ["error", "getters"],
+    "class-methods-use-this": "off",
+    "@typescript-eslint/class-methods-use-this": "error",
     "comma-dangle": "off",
     "@typescript-eslint/comma-dangle": [
       "error",
