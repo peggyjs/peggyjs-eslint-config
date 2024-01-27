@@ -5,6 +5,7 @@ module.exports = {
     node: true,
     es6: true,
   },
+  plugins: ["@stylistic"],
   parserOptions: {
     ecmaVersion: 2018,
   },
@@ -183,7 +184,6 @@ module.exports = {
     "no-bitwise": "off",
     "no-caller": "error",
     "no-case-declarations": "error",
-    "no-confusing-arrow": "error",
 
     // This should be turned on one day.
     "no-console": "off",
@@ -236,8 +236,6 @@ module.exports = {
     "no-extra-bind": "error",
     "no-extra-boolean-cast": "error",
     "no-extra-label": "error",
-    "no-extra-semi": "error",
-    "no-floating-decimal": "error",
     "no-global-assign": "error",
     "no-implicit-coercion": "error",
     "no-implicit-globals": "error",
@@ -286,7 +284,6 @@ module.exports = {
     // Disabled because sometimes putting a number inline is better than
     // complicating the code by creating a constant.
     "no-magic-numbers": "off",
-    "no-mixed-operators": "error",
     "no-multi-assign": "error",
     "no-multi-str": "error",
 
@@ -297,9 +294,9 @@ module.exports = {
     "no-nested-ternary": "error",
     "no-new": "error",
     "no-new-func": "error",
-    "no-new-object": "error",
     "no-new-wrappers": "error",
     "no-nonoctal-decimal-escape": "error",
+    "no-object-constructor": "error",
     "no-octal": "error",
     "no-octal-escape": "error",
 
@@ -321,7 +318,6 @@ module.exports = {
     "no-restricted-properties": "off",
     "no-restricted-syntax": "off",
     "no-return-assign": "error",
-    "no-return-await": "error",
     "no-script-url": "error",
     "no-sequences": "error",
     "no-shadow": "off", // Disable for now.
@@ -370,11 +366,6 @@ module.exports = {
     // assignment happens later. Here, it makes sense to save space and combine
     // all declared variables into one statement.
     "one-var": ["error", { initialized: "never", uninitialized: "always" }],
-
-    // Disabled because `one-var` doesn't allow multiple initialized variable
-    // declarations in one `let`/`const`/`var` statement and it doesn't make
-    // sense to put each uninitialized variable on a separate line.
-    "one-var-declaration-per-line": "off",
     "operator-assignment": ["error", "always"],
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
@@ -396,7 +387,6 @@ module.exports = {
     // Disabled because the decision between using string concatenation or a
     // template literal is a subtle one and it shouldn't be done mechanically.
     "prefer-template": "off",
-    "quote-props": ["error", "consistent"],
 
     // Set to require a radix even though it always defaults to 10 in ES5+. It
     // prevents confusion.
@@ -415,14 +405,6 @@ module.exports = {
     ],
     "sort-keys": "off",
     "sort-vars": "off",
-    "spaced-comment": [
-      "error",
-      "always",
-      {
-        line: { markers: ["/"] },
-        block: { markers: ["*"], balanced: true },
-      },
-    ],
     "strict": "error",
     "symbol-description": "error",
 
@@ -439,100 +421,148 @@ module.exports = {
 
     // ----- Layout & Formatting -----
 
-    "array-bracket-newline": ["error", "consistent"],
-    "array-bracket-spacing": ["error", "never"],
+    "line-comment-position": "off",
+    "unicode-bom": ["error", "never"],
+
+    // ----- @stylistic -----
+    "@stylistic/array-bracket-newline": ["error", "consistent"],
+    "@stylistic/array-bracket-spacing": ["error", "never"],
 
     // There are a few files where we use spacing in arrays to our advantage
-    "array-element-newline": "off",
-    "arrow-parens": ["error", "as-needed"],
-    "arrow-spacing": "error",
-    "block-spacing": ["error", "always"],
-    "brace-style": ["error", "1tbs", {
+    "@stylistic/array-element-newline": "off",
+    "@stylistic/arrow-parens": ["error", "as-needed"],
+    "@stylistic/arrow-spacing": "error",
+    "@stylistic/block-spacing": ["error", "always"],
+    "@stylistic/brace-style": ["error", "1tbs", {
       "allowSingleLine": true,
     }],
-    "comma-dangle": ["error", {
+    "@stylistic/comma-dangle": ["error", {
       arrays: "always-multiline",
       objects: "always-multiline",
       imports: "always-multiline",
       exports: "always-multiline",
       functions: "never",
     }],
-    "comma-spacing": "error",
-    "comma-style": "error",
-    "computed-property-spacing": "error",
-    "dot-location": ["error", "property"],
-    "eol-last": "error",
-    "func-call-spacing": "error",
-    "function-call-argument-newline": ["error", "consistent"],
-    "function-paren-newline": ["error", "consistent"],
-    "generator-star-spacing": ["error", "after"],
-    "implicit-arrow-linebreak": "error",
-    "indent": ["error", 2, {
+    "@stylistic/comma-spacing": "error",
+    "@stylistic/comma-style": "error",
+    "@stylistic/computed-property-spacing": "error",
+    "@stylistic/dot-location": ["error", "property"],
+    "@stylistic/eol-last": "error",
+    "@stylistic/func-call-spacing": "off", // Renamed
+    "@stylistic/function-call-spacing": "error",
+    "@stylistic/function-call-argument-newline": ["error", "consistent"],
+    "@stylistic/function-paren-newline": ["error", "consistent"],
+    "@stylistic/generator-star-spacing": ["error", "after"],
+    "@stylistic/implicit-arrow-linebreak": "error",
+    "@stylistic/indent": ["error", 2, {
       SwitchCase: 1,
       offsetTernaryExpressions: true,
     }],
-    "jsx-quotes": "off",
+    "@stylistic/indent-binary-ops": ["off", 2], // Don't like how this looks
+
+    // No JSX
+    "@stylistic/jsx-child-element-spacing" : "off",
+    "@stylistic/jsx-closing-bracket-location" : "off",
+    "@stylistic/jsx-closing-tag-location" : "off",
+    "@stylistic/jsx-curly-brace-presence" : "off",
+    "@stylistic/jsx-curly-newline" : "off",
+    "@stylistic/jsx-curly-spacing" : "off",
+    "@stylistic/jsx-equals-spacing" : "off",
+    "@stylistic/jsx-first-prop-new-line" : "off",
+    "@stylistic/jsx-indent-props" : "off",
+    "@stylistic/jsx-indent" : "off",
+    "@stylistic/jsx-max-props-per-line" : "off",
+    "@stylistic/jsx-newline" : "off",
+    "@stylistic/jsx-one-expression-per-line" : "off",
+    "@stylistic/jsx-props-no-multi-spaces" : "off",
+    "@stylistic/jsx-quotes": "off",
+    "@stylistic/jsx-self-closing-comp" : "off",
+    "@stylistic/jsx-sort-props" : "off",
+    "@stylistic/jsx-tag-spacing" : "off",
+    "@stylistic/jsx-wrap-multilines" : "off",
 
     // We sometimes align colons across larger areas than this can find
-    "key-spacing": "off",
-    "keyword-spacing": "error",
-    "line-comment-position": "off",
-    "linebreak-style": ["error", "unix"],
-    "lines-around-comment": "off",
-    "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
+    "@stylistic/key-spacing": "off",
+    "@stylistic/keyword-spacing": "error",
+    "@stylistic/linebreak-style": ["error", "unix"],
+    "@stylistic/lines-around-comment": "off",
+    "@stylistic/lines-between-class-members": ["error", "always", {
+      exceptAfterSingleLine: true,
+    }],
 
     // Set to ignore lines that contain strings and template literals because
     // devising more targeted pattern and putting it into `ignorePattern` would
     // be quite hard.
-    "max-len": [
+    "@stylistic/max-len": [
       "error",
       {
         code: 80,
         ignoreComments: true,
+        ignoreRegExpLiterals: true,
         ignoreStrings: true,
         ignoreTemplateLiterals: true,
       },
     ],
 
     // Disabled because code quality issues are generally not checked.
-    "max-statements-per-line": "off",
-    "multiline-ternary": ["error", "always-multiline"],
-    "new-parens": "error",
-    "newline-per-chained-call": "off",
+    "@stylistic/max-statements-per-line": "off",
+    "@stylistic/member-delimiter-style": "off", // TS-only
+    "@stylistic/multiline-ternary": ["error", "always-multiline"],
+    "@stylistic/new-parens": "error",
+    "@stylistic/newline-per-chained-call": "off",
+    "@stylistic/no-confusing-arrow": "error",
 
     // Disabled because extra parens sometimes improve readability.
-    "no-extra-parens": "off",
-    "no-mixed-spaces-and-tabs": "error",
+    "@stylistic/no-extra-parens": "off",
+    "@stylistic/no-extra-semi": "error",
+    "@stylistic/no-floating-decimal": "error",
+    "@stylistic/no-mixed-operators": "error",
+    "@stylistic/no-mixed-spaces-and-tabs": "error",
 
     // Disabled because multiple spaces are often used for alignment.
-    "no-multi-spaces": "off",
-    "no-multiple-empty-lines": ["error", { max: 1 }],
-    "no-tabs": "error",
-    "no-trailing-spaces": "error",
-    "no-whitespace-before-property": "error",
-    "nonblock-statement-body-position": "error",
-    "object-curly-newline": "error",
-    "object-curly-spacing": ["error", "always"],
-    "object-property-newline": "off",
-    "operator-linebreak": ["error", "before"],
-    "padded-blocks": ["error", "never"],
-    "padding-line-between-statements": "off",
-    "quotes": ["error", "double", { avoidEscape: true }],
-    "rest-spread-spacing": ["error", "never"],
-    "semi": ["error", "always"],
-    "semi-spacing": ["error", { before: false, after: true }],
-    "semi-style": "error",
-    "space-before-blocks": ["error", "always"],
-    "space-before-function-paren": ["error", "never"],
-    "space-in-parens": ["error", "never"],
-    "space-infix-ops": ["error", { "int32Hint": true }],
-    "space-unary-ops": ["error", { words: true, nonwords: false }],
-    "switch-colon-spacing": "error",
-    "template-curly-spacing": ["error", "never"],
-    "template-tag-spacing": "error",
-    "unicode-bom": ["error", "never"],
-    "wrap-iife": ["error", "inside"],
-    "wrap-regex": "off",
-    "yield-star-spacing": ["error", "after"],
+    "@stylistic/no-multi-spaces": "off",
+    "@stylistic/no-multiple-empty-lines": ["error", { max: 1 }],
+    "@stylistic/no-tabs": "error",
+    "@stylistic/no-trailing-spaces": "error",
+    "@stylistic/no-whitespace-before-property": "error",
+    "@stylistic/nonblock-statement-body-position": "error",
+    "@stylistic/object-curly-newline": "error",
+    "@stylistic/object-curly-spacing": ["error", "always"],
+    "@stylistic/object-property-newline": "off",
+    // Disabled because `one-var` doesn't allow multiple initialized variable
+    // declarations in one `let`/`const`/`var` statement and it doesn't make
+    // sense to put each uninitialized variable on a separate line.
+    "@stylistic/one-var-declaration-per-line": "off",
+    "@stylistic/operator-linebreak": ["error", "before"],
+    "@stylistic/padded-blocks": ["error", "never"],
+    "@stylistic/padding-line-between-statements": "off",
+    "@stylistic/quote-props": ["error", "consistent"],
+    "@stylistic/quotes": ["error", "double", { avoidEscape: true }],
+    "@stylistic/rest-spread-spacing": ["error", "never"],
+    "@stylistic/semi": ["error", "always"],
+    "@stylistic/semi-spacing": ["error", { before: false, after: true }],
+    "@stylistic/semi-style": "error",
+    "@stylistic/space-before-blocks": ["error", "always"],
+    "@stylistic/space-before-function-paren": ["error", "never"],
+    "@stylistic/space-in-parens": ["error", "never"],
+    "@stylistic/space-infix-ops": ["error", { "int32Hint": true }],
+    "@stylistic/space-unary-ops": ["error", { words: true, nonwords: false }],
+    "@stylistic/spaced-comment": [
+      "error",
+      "always",
+      {
+        line: { markers: ["/"] },
+        block: { markers: ["*"], balanced: true },
+      },
+    ],
+    "@stylistic/switch-colon-spacing": "error",
+    "@stylistic/template-curly-spacing": ["error", "never"],
+    "@stylistic/template-tag-spacing": "error",
+    "@stylistic/type-annotation-spacing": "off", // TS-only
+    "@stylistic/type-generic-spacing": "off", // TS-only
+    "@stylistic/type-named-tuple-spacing": "off", // TS-only
+    "@stylistic/wrap-iife": ["error", "inside"],
+    "@stylistic/wrap-regex": "off",
+    "@stylistic/yield-star-spacing": ["error", "after"],
   },
 };
