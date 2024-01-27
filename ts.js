@@ -8,27 +8,29 @@ module.exports = {
   plugins: ["@typescript-eslint"],
   rules: {
     // From plugin:@typescript-eslint/eslint-recommended
-    "constructor-super": "off",
-    "getter-return": "off",
-    "no-const-assign": "off",
-    "no-dupe-args": "off",
-    "no-dupe-class-members": "off",
-    "no-dupe-keys": "off",
-    "no-func-assign": "off",
-    "no-import-assign": "off",
-    "no-new-symbol": "off",
-    "no-obj-calls": "off",
-    "no-redeclare": "off",
-    "no-setter-return": "off",
-    "no-this-before-super": "off",
-    "no-undef": "off",
-    "no-unreachable": "off",
-    "no-unsafe-negation": "off",
-    "no-var": "error",
-    "prefer-const": "error",
-    "prefer-rest-params": "error",
-    "prefer-spread": "error",
-    "valid-typeof": "off",
+    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/eslint-recommended.ts
+    /* eslint-disable capitalized-comments */
+    "constructor-super": "off", // ts(2335) & ts(2377)
+    "getter-return": "off", // ts(2378)
+    "no-const-assign": "off", // ts(2588)
+    "no-dupe-args": "off", // ts(2300)
+    "no-dupe-class-members": "off", // ts(2393) & ts(2300)
+    "no-dupe-keys": "off", // ts(1117)
+    "no-func-assign": "off", // ts(2630)
+    "no-import-assign": "off", // ts(2632) & ts(2540)
+    "no-new-symbol": "off", // ts(7009)
+    "no-obj-calls": "off", // ts(2349)
+    "no-redeclare": "off", // ts(2451)
+    "no-setter-return": "off", // ts(2408)
+    "no-this-before-super": "off", // ts(2376) & ts(17009)
+    "no-undef": "off", // ts(2304) & ts(2552)
+    "no-unreachable": "off", // ts(7027)
+    "no-unsafe-negation": "off", // ts(2365) & ts(2322) & ts(2358)
+    "no-var": "error", // ts transpiles let/const to var, so no need for vars any more
+    "prefer-const": "error", // ts provides better types with const
+    "prefer-rest-params": "error", // ts provides better types with rest args over arguments
+    "prefer-spread": "error", // ts transpiles spread to apply, so no need for manual apply
+    /* eslint-enable capitalized-comments */
 
     // For all of these that have a non-plugin "off" to go with them,
     // the typescript-eslint plugin provides a superset of the original
@@ -41,31 +43,9 @@ module.exports = {
     }],
     "@typescript-eslint/ban-tslint-comment": "error",
     "@typescript-eslint/ban-types": "off", // Not needed
-    "block-spacing": "off",
-    "@typescript-eslint/block-spacing": ["error", "always"],
-    "brace-style": "off",
-    "@typescript-eslint/brace-style": ["error", "1tbs", {
-      "allowSingleLine": true,
-    }],
     "@typescript-eslint/class-literal-property-style": ["error", "getters"],
     "class-methods-use-this": "off",
     "@typescript-eslint/class-methods-use-this": "error",
-    "comma-dangle": "off",
-    "@typescript-eslint/comma-dangle": [
-      "error",
-      {
-        arrays: "always-multiline",
-        objects: "always-multiline",
-        imports: "always-multiline",
-        exports: "always-multiline",
-        functions: "never",
-        enums: "always-multiline",
-        generics: "never",
-        tuples: "always-multiline",
-      },
-    ],
-    "comma-spacing": "off",
-    "@typescript-eslint/comma-spacing": "error",
     "default-param-last": "off",
     "@typescript-eslint/consistent-generic-constructors": [
       "error",
@@ -87,20 +67,14 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": "error",
     "@typescript-eslint/explicit-member-accessibility": "error",
     "@typescript-eslint/explicit-module-boundary-types": "error",
-    "func-call-spacing": "off",
-    "@typescript-eslint/func-call-spacing": "error",
-    "@typescript-eslint/indent": ["off", 2], // Broken, see https://github.com/typescript-eslint/typescript-eslint/issues/1824
     "@typescript-eslint/init-declarations": "error",
-    "@typescript-eslint/key-spacing": "off", // Off in JS
-    "@typescript-eslint/keyword-spacing": "error",
-    "@typescript-eslint/lines-around-comment": "off", // Big changes in .d.ts
-    "@typescript-eslint/lines-between-class-members": "error",
-    "@typescript-eslint/member-delimiter-style": "error",
+    "@typescript-eslint/max-params": "off", // Code quality not checked
     "@typescript-eslint/member-ordering": "error",
     "@typescript-eslint/method-signature-style": ["error", "method"],
     "@typescript-eslint/naming-convention": "off", // Too late
     "no-array-constructor": "off",
     "@typescript-eslint/no-array-constructor": "error",
+    "@typescript-eslint/no-array-delete": "error",
     "@typescript-eslint/no-base-to-string": "off", // Can't config
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-confusing-void-expression": "off", // Can't config
@@ -113,9 +87,6 @@ module.exports = {
     "@typescript-eslint/no-empty-interface": "error",
     "@typescript-eslint/no-explicit-any": "off", // Too hard
     "@typescript-eslint/no-extra-non-null-assertion": "error",
-    "@typescript-eslint/no-extra-parens": "off", // Disagree
-    "no-extra-semi": "off",
-    "@typescript-eslint/no-extra-semi": "error",
     "@typescript-eslint/no-extraneous-class": "error",
     "@typescript-eslint/no-floating-promises": "off", // Can't config
     "@typescript-eslint/no-for-in-array": "error",
@@ -144,7 +115,6 @@ module.exports = {
     "@typescript-eslint/no-shadow": "error",
     "@typescript-eslint/no-this-alias": "error",
     "@typescript-eslint/no-throw-literal": "off", // Can't config
-    "@typescript-eslint/no-type-alias": "off", // Not important
     "@typescript-eslint/no-unnecessary-boolean-literal-compare": "off", // Can't config
     "@typescript-eslint/no-unnecessary-condition": "off", // Can't config
     "@typescript-eslint/no-unnecessary-qualifier": "off", // Can't config
@@ -158,19 +128,19 @@ module.exports = {
     "@typescript-eslint/no-unsafe-enum-comparison": "error",
     "@typescript-eslint/no-unsafe-member-access": "off", // Can't config
     "@typescript-eslint/no-unsafe-return": "off", // Can't config
+    "@typescript-eslint/no-unsafe-unary-minus": "error",
     "@typescript-eslint/no-unused-expressions": "error",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-use-before-define": "error",
     "@typescript-eslint/no-useless-constructor": "error",
     "@typescript-eslint/no-useless-empty-export": "error",
+    "@typescript-eslint/no-useless-template-literals": "error",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/non-nullable-type-assertion-style": "off", // Can't config
-    "object-curly-spacing": "off",
-    "@typescript-eslint/object-curly-spacing": ["error", "always"],
-    "@typescript-eslint/padding-line-between-statements": "error",
     "@typescript-eslint/parameter-properties": "error",
     "@typescript-eslint/prefer-as-const": "error",
+    "@typescript-eslint/prefer-destructuring": "off", // Don't like this style
     "@typescript-eslint/prefer-enum-initializers": "error",
     "@typescript-eslint/prefer-for-of": "error",
     "@typescript-eslint/prefer-function-type": "error",
@@ -179,6 +149,7 @@ module.exports = {
     "@typescript-eslint/prefer-namespace-keyword": "error",
     "@typescript-eslint/prefer-nullish-coalescing": "off", // Can't config
     "@typescript-eslint/prefer-optional-chain": "error",
+    "@typescript-eslint/prefer-promise-reject-errors": "error",
     "@typescript-eslint/prefer-readonly-parameter-types": "off", // Can't config
     "@typescript-eslint/prefer-readonly": "off", // Can't config
     "@typescript-eslint/prefer-reduce-type-parameter": "off", // Can't config
@@ -187,27 +158,38 @@ module.exports = {
     "@typescript-eslint/prefer-string-starts-ends-with": "off", // Can't config
     "@typescript-eslint/prefer-ts-expect-error": "error",
     "@typescript-eslint/promise-function-async": "off", // Can't config
-    "quotes": "off",
-    "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
     "@typescript-eslint/require-array-sort-compare": "off", // Can't config
     "@typescript-eslint/require-await": "off", // Can't config
     "@typescript-eslint/restrict-plus-operands": "off", // Can't config
     "@typescript-eslint/restrict-template-expressions": "off", // Can't config
     "@typescript-eslint/return-await": "off", // Can't config
-    "semi": "off",
-    "@typescript-eslint/semi": ["error", "always"],
     "@typescript-eslint/sort-type-constituents": "error",
-    "@typescript-eslint/space-before-blocks": "error",
-    "space-before-function-paren": "off",
-    "@typescript-eslint/space-before-function-paren": ["error", "never"],
-    "space-infix-ops": "off",
-    "@typescript-eslint/space-infix-ops": ["error", { "int32Hint": true }],
     "@typescript-eslint/strict-boolean-expressions": "off", // Can't config
     "@typescript-eslint/switch-exhaustiveness-check": "off", // Can't config
     "@typescript-eslint/triple-slash-reference": "error",
-    "@typescript-eslint/type-annotation-spacing": "error",
     "@typescript-eslint/typedef": "error",
     "@typescript-eslint/unbound-method": "off", // Can't config
     "@typescript-eslint/unified-signatures": "off", // Too hard
+
+    // --- @stylistic ---
+    // Don't include anything that is in index.js
+    "@stylistic/comma-dangle": [
+      "error",
+      {
+        arrays: "always-multiline",
+        objects: "always-multiline",
+        imports: "always-multiline",
+        exports: "always-multiline",
+        functions: "never",
+        enums: "always-multiline",
+        generics: "never",
+        tuples: "always-multiline",
+      },
+    ],
+    "@stylistic/member-delimiter-style": "error",
+    "@stylistic/type-annotation-spacing": "error",
+    "@stylistic/type-generic-spacing": "error",
+    "@stylistic/type-named-tuple-spacing": "error",
   },
+
 };

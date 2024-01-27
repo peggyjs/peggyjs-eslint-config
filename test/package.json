@@ -5,6 +5,9 @@
   "private": "true",
   "author": "Joe Hildebrand <joe-github@cursive.net>",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint . --ext js,ts"
+  },
   "devDependencies": {
     "@peggyjs/eslint-config": "file:.."
   }
