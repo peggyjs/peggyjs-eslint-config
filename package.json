@@ -12,13 +12,12 @@
     "missing": "npm run missing:js && npm run missing:ts",
     "missing:js": "eslint-find-rules --verbose -u index.js",
     "missing:ts": "eslint-find-rules --verbose --no-core -u ts.js",
-    "test": "eslint test --ext js,ts"
+    "test": "cd test/old && npm test && cd ../flat && npm test"
   },
   "author": "Joe Hildebrand <joe-github@cursive.net>",
   "license": "MIT",
   "repository": "peggyjs/peggyjs-eslint-config",
   "peerDependencies": {
-    "@stylistic/eslint-plugin": "~1",
     "@typescript-eslint/eslint-plugin": "~6",
     "@typescript-eslint/parser": "~6",
     "eslint": "~8",
@@ -36,11 +35,14 @@
     }
   },
   "devDependencies": {
-    "@stylistic/eslint-plugin": "^1.5.4",
-    "@typescript-eslint/eslint-plugin": "^6.19.1",
-    "@typescript-eslint/parser": "^6.19.1",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.56.0",
     "eslint-find-rules": "4.1.0",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@stylistic/eslint-plugin": "1.6.0",
+    "globals": "13.24.0"
   }
 }
