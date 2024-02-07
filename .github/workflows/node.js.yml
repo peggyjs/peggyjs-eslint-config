@@ -25,7 +25,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: npm
       - name: Install dependencies
-        run: npm install && cd test && npm install
+        run: npm install && cd test/old && npm install && cd ../flat && npm install
       - name: Check coding standards
         run: npm run lint
       - name: Test
