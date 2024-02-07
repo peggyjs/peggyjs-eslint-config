@@ -8,11 +8,11 @@
     "eslint"
   ],
   "scripts": {
-    "lint": "eslint . --ext js",
+    "lint": "eslint .",
     "missing": "npm run missing:js && npm run missing:ts",
     "missing:js": "eslint-find-rules --verbose -u index.js",
     "missing:ts": "eslint-find-rules --verbose --no-core -u ts.js",
-    "test": "cd test/old && npm test && cd ../flat && npm test"
+    "test": "cd test/old && npm test && cd ../flat && npm test && cd ../flat-module && npm test"
   },
   "author": "Joe Hildebrand <joe-github@cursive.net>",
   "license": "MIT",
@@ -44,5 +44,8 @@
   "dependencies": {
     "@stylistic/eslint-plugin": "1.6.0",
     "globals": "13.24.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

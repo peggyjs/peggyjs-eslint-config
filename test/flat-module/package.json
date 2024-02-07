@@ -1,13 +1,16 @@
 {
-  "name": "test",
+  "name": "flat-module",
   "version": "0.0.0",
-  "description": "Tests for old config style",
-  "private": "true",
+  "description": "Flat config tests for es modules",
+  "main": "index.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "eslint ."
+  },
+  "keywords": [],
   "author": "Joe Hildebrand <joe-github@cursive.net>",
   "license": "MIT",
-  "scripts": {
-    "test": "ESLINT_USE_FLAT_CONFIG=false eslint . --ext js,ts"
-  },
   "devDependencies": {
     "@peggyjs/eslint-config": "file:../..",
     "@typescript-eslint/eslint-plugin": "6.21.0",
