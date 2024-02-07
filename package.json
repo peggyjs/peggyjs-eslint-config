@@ -45,6 +45,7 @@
     "@stylistic/eslint-plugin": "1.6.0",
     "globals": "13.24.0"
   },
+  "packageManager": "pnpm@8.15.1",
   "engines": {
     "node": ">=18"
   }
