@@ -19,17 +19,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Install pnpm
+        run: corepack enable
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
+          cache: pnpm
       - name: Install dependencies
-        run: |
-          npm install
-          (cd test/old && npm install)
-          (cd test/flat && npm install)
-          (cd test/flat-module && npm install)
+        run: pnpm i -r
       - name: Check coding standards
         run: npm run lint
       - name: Test

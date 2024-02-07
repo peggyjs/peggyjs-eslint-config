@@ -1,0 +1,3 @@
+{
+  "dep": ["optional", "peer", "prod", "dev", "packageManager"]
+}
