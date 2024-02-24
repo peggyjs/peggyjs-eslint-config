@@ -94,7 +94,7 @@ exports.rules = {
   "no-unsafe-negation": "error",
   "no-unsafe-optional-chaining": "error",
   "no-unused-private-class-members": "off", // Not using private yet
-  "no-unused-vars": "error",
+  "no-unused-vars": ["error", { "varsIgnorePattern": "^_" }],
 
   // This is going to cause problems, but I don't care.
   "no-use-before-define": "error",
