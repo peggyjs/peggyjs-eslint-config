@@ -4,7 +4,7 @@ const globals = require("globals");
 const mocha = require("eslint-plugin-mocha");
 
 module.exports = {
-  files: ["test/**"],
+  files: ["test/**/*.js"],
   languageOptions: {
     globals: globals.mocha,
   },

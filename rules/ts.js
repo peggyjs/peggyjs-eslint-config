@@ -125,7 +125,7 @@ exports.rules = {
   "@typescript-eslint/no-unsafe-unary-minus": "error",
   "@typescript-eslint/no-unused-expressions": "error",
   "no-unused-vars": "off",
-  "@typescript-eslint/no-unused-vars": "error",
+  "@typescript-eslint/no-unused-vars": ["error", { "varsIgnorePattern": "^_" }],
   "@typescript-eslint/no-use-before-define": "error",
   "@typescript-eslint/no-useless-constructor": "error",
   "@typescript-eslint/no-useless-empty-export": "error",
