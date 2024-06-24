@@ -1,8 +1,9 @@
 "use strict";
 
+/* eslint meta/no-unused-rules: ["error", {ignore: ["@", "@stylistic"]}] */
+
 module.exports = {
   rules: {
-    // Check: @typescript-eslint
 
     // From plugin:@typescript-eslint/eslint-recommended
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/eslint-recommended.ts

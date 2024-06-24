@@ -19,6 +19,9 @@ importers:
         specifier: 15.4.0
         version: 15.4.0
     devDependencies:
+      '@cto.af/eslint-plugin-meta':
+        specifier: 1.0.0
+        version: 1.0.0(eslint@9.5.0)
       '@peggyjs/sort-rules':
         specifier: link:sort-rules
         version: link:sort-rules
@@ -36,6 +39,12 @@ importers:
         version: 8.0.0-alpha.30(eslint@9.5.0)(typescript@5.4.5)
 
 packages:
+
+  '@cto.af/eslint-plugin-meta@1.0.0':
+    resolution: {integrity: sha512-P0amswVBsXLLD5UA0gXmx8iASy8VowN+Ror9atFppv33rrkJMkGzTrVVUUzyz/GY9KIuS56h8punmmw22CpFXQ==}
+    engines: {node: '>=18.8'}
+    peerDependencies:
+      eslint: '>=9'
 
   '@eslint-community/eslint-utils@4.4.0':
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
@@ -601,6 +610,10 @@ packages:
     engines: {node: '>=10'}
 
 snapshots:
+
+  '@cto.af/eslint-plugin-meta@1.0.0(eslint@9.5.0)':
+    dependencies:
+      eslint: 9.5.0
 
   '@eslint-community/eslint-utils@4.4.0(eslint@9.5.0)':
     dependencies:
