@@ -15,28 +15,28 @@
   "license": "MIT",
   "repository": "peggyjs/peggyjs-eslint-config",
   "devDependencies": {
-    "@cto.af/eslint-plugin-meta": "1.0.0",
+    "@cto.af/eslint-plugin-meta": "1.0.5",
     "@peggyjs/sort-rules": "link:sort-rules",
-    "eslint": "^9.5.0",
+    "eslint": "^9.6.0",
     "eslint-plugin-mocha": "10.4.3",
-    "typescript": "^5.4.5",
-    "typescript-eslint": "8.0.0-alpha.30"
+    "typescript": "^5.5.3",
+    "typescript-eslint": "8.0.0-alpha.39"
   },
   "dependencies": {
-    "@stylistic/eslint-plugin": "2.2.0",
-    "globals": "15.4.0"
+    "@stylistic/eslint-plugin": "2.3.0",
+    "globals": "15.8.0"
   },
   "overrides": {
-    "@typescript-eslint/utils": "8.0.0-alpha.30",
-    "@typescript-eslint/parser": "8.0.0-alpha.30"
+    "@typescript-eslint/utils": "8.0.0-alpha.39",
+    "@typescript-eslint/parser": "8.0.0-alpha.39"
   },
   "pnpm": {
     "overrides": {
-      "@typescript-eslint/utils": "8.0.0-alpha.30",
-      "@typescript-eslint/parser": "8.0.0-alpha.30"
+      "@typescript-eslint/utils": "8.0.0-alpha.39",
+      "@typescript-eslint/parser": "8.0.0-alpha.39"
     }
   },
-  "packageManager": "pnpm@9.3.0",
+  "packageManager": "pnpm@9.4.0",
   "engines": {
     "node": ">=18"
   }
