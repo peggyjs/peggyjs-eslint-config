@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "test": "cd test/old && npm test && cd ../flat && npm test && cd ../flat-module && npm test"
+    "test": "cd test/old && npm test && cd ../flat && npm test && cd ../flat-module && npm test",
+    "ci": "npm run lint && npm run test"
   },
   "author": "Joe Hildebrand <joe-github@cursive.net>",
   "license": "MIT",

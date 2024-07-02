@@ -28,7 +28,5 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm i -r
-      - name: Check coding standards
-        run: npm run lint
-      - name: Test
-        run: npm run test
+      - name: Check coding standards and run tests
+        run: npm run ci
