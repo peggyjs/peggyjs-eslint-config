@@ -2,58 +2,23 @@
 
 /* eslint meta/no-unused-rules: ["error", {ignore: ["@", "@stylistic"]}] */
 
+const { builtinRules } = require("eslint/use-at-your-own-risk");
+const ts = require("typescript-eslint");
+
+const originalDisabled = {};
+builtinRules.forEach((_, r) => {
+  if (ts.plugin.rules[r]) {
+    originalDisabled[r] = "off";
+  }
+});
+
 module.exports = {
   rules: {
-
-    // From plugin:@typescript-eslint/eslint-recommended
-    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/eslint-recommended.ts
-    /* eslint-disable capitalized-comments */
-    // [@typescript-eslint/eslint-recommended](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/eslint-recommended-raw.ts)
-    "constructor-super": "off", // ts(2335) & ts(2377)
-    "getter-return": "off", // ts(2378)
-    "no-const-assign": "off", // ts(2588)
-    "no-dupe-args": "off", // ts(2300)
-    "no-dupe-class-members": "off", // ts(2393) & ts(2300)
-    "no-dupe-keys": "off", // ts(1117)
-    "no-func-assign": "off", // ts(2630)
-    "no-import-assign": "off", // ts(2632) & ts(2540)
-    "no-obj-calls": "off", // ts(2349)
-    "no-redeclare": "off", // ts(2451)
-    "no-setter-return": "off", // ts(2408)
-    "no-this-before-super": "off", // ts(2376) & ts(17009)
-    "no-undef": "off", // ts(2304) & ts(2552)
-    "no-unreachable": "off", // ts(7027)
-    "no-unsafe-negation": "off", // ts(2365) & ts(2322) & ts(2358)
-    "no-var": "error", // ts transpiles let/const to var, so no need for vars any more
-    "prefer-const": "error", // ts provides better types with const
-    "prefer-rest-params": "error", // ts provides better types with rest args over arguments
-    "prefer-spread": "error", // ts transpiles spread to apply, so no need for manual apply
-    /* eslint-enable capitalized-comments */
-
     // [original disabled for extension](https://typescript-eslint.io/rules/?=extension#extension-rules)
-    "class-methods-use-this": "off",
-    "consistent-return": "off",
-    "default-param-last": "off",
-    "dot-notation": "off",
-    "init-declarations": "off",
-    "max-params": "off",
-    "no-array-constructor": "off",
-    // 'no-dupe-class-members': 'off',
-    "no-empty-function": "off",
-    "no-implied-eval": "off",
-    "no-invalid-this": "off",
-    "no-loop-func": "off",
-    "no-loss-of-precision": "off",
-    // 'no-magic-numbers': 'off',
-    "no-shadow": "off",
-    "no-throw-literal": "off",
-    "no-unused-expressions": "off",
-    "no-unused-vars": "off",
-    "no-use-before-define": "off",
-    "no-useless-constructor": "off",
-    "prefer-destructuring": "off",
-    "prefer-promise-reject-errors": "off",
-    "require-await": "off",
+    ...originalDisabled,
+
+    // [@typescript-eslint/eslint-recommended](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/eslint-recommended-raw.ts)
+    ...ts.configs.eslintRecommended.rules,
 
     // For all of these that have a non-plugin "off" to go with them,
     // the typescript-eslint plugin provides a superset of the original
@@ -66,7 +31,6 @@ module.exports = {
       "ts-expect-error": "allow-with-description",
     }],
     "@typescript-eslint/ban-tslint-comment": "error",
-    "@typescript-eslint/ban-types": "off", // Not needed
     "@typescript-eslint/class-literal-property-style": ["error", "getters"],
     "@typescript-eslint/class-methods-use-this": "error",
     "@typescript-eslint/consistent-generic-constructors": [
@@ -130,6 +94,7 @@ module.exports = {
     "@typescript-eslint/no-redundant-type-constituents": "off", // Can't config
     "@typescript-eslint/no-require-imports": "error",
     "@typescript-eslint/no-restricted-imports": "off", // Not needed
+    "@typescript-eslint/no-restricted-types": "off", // Not needed
     "@typescript-eslint/no-shadow": "error",
     "@typescript-eslint/no-this-alias": "error",
     "@typescript-eslint/no-unnecessary-boolean-literal-compare": "off", // Can't config
@@ -139,11 +104,13 @@ module.exports = {
     "@typescript-eslint/no-unnecessary-type-arguments": "off", // Can't config
     "@typescript-eslint/no-unnecessary-type-assertion": "off", // Can't config
     "@typescript-eslint/no-unnecessary-type-constraint": "error",
+    "@typescript-eslint/no-unnecessary-type-parameters": "error",
     "@typescript-eslint/no-unsafe-argument": "off", // Can't config
     "@typescript-eslint/no-unsafe-assignment": "off", // Can't config
     "@typescript-eslint/no-unsafe-call": "off", // Can't config
     "@typescript-eslint/no-unsafe-declaration-merging": "error",
     "@typescript-eslint/no-unsafe-enum-comparison": "error",
+    "@typescript-eslint/no-unsafe-function-type": "error",
     "@typescript-eslint/no-unsafe-member-access": "off", // Can't config
     "@typescript-eslint/no-unsafe-return": "off", // Can't config
     "@typescript-eslint/no-unsafe-unary-minus": "error",
@@ -152,6 +119,7 @@ module.exports = {
     "@typescript-eslint/no-use-before-define": "error",
     "@typescript-eslint/no-useless-constructor": "error",
     "@typescript-eslint/no-useless-empty-export": "error",
+    "@typescript-eslint/no-wrapper-object-types": "error",
     "@typescript-eslint/non-nullable-type-assertion-style": "off", // Can't config
     "@typescript-eslint/only-throw-error": "off",
     "@typescript-eslint/parameter-properties": "error",

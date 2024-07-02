@@ -460,7 +460,6 @@ module.exports = {
     "@stylistic/jsx-equals-spacing" : "off",
     "@stylistic/jsx-first-prop-new-line" : "off",
     "@stylistic/jsx-function-call-newline": "off",
-    "@stylistic/jsx-indent" : "off",
     "@stylistic/jsx-indent-props" : "off",
     "@stylistic/jsx-max-props-per-line" : "off",
     "@stylistic/jsx-newline" : "off",
