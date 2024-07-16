@@ -99,6 +99,7 @@ module.exports = {
     "@typescript-eslint/no-this-alias": "error",
     "@typescript-eslint/no-unnecessary-boolean-literal-compare": "off", // Can't config
     "@typescript-eslint/no-unnecessary-condition": "off", // Can't config
+    "@typescript-eslint/no-unnecessary-parameter-property-assignment": "error",
     "@typescript-eslint/no-unnecessary-qualifier": "off", // Can't config
     "@typescript-eslint/no-unnecessary-template-expression": "error",
     "@typescript-eslint/no-unnecessary-type-arguments": "off", // Can't config
