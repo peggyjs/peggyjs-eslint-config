@@ -10,19 +10,19 @@
   },
   "devDependencies": {
     "@peggyjs/eslint-config": "file:../..",
-    "@typescript-eslint/eslint-plugin": "8.0.0-alpha.39",
-    "@typescript-eslint/parser": "8.0.0-alpha.39",
-    "eslint": "9.6.0",
+    "@typescript-eslint/eslint-plugin": "8.0.0-alpha.44",
+    "@typescript-eslint/parser": "8.0.0-alpha.44",
+    "eslint": "9.7.0",
     "typescript": "5.5.3"
   },
   "overrides": {
-    "@typescript-eslint/utils": "8.0.0-alpha.39",
-    "@typescript-eslint/parser": "8.0.0-alpha.39"
+    "@typescript-eslint/utils": "8.0.0-alpha.44",
+    "@typescript-eslint/parser": "8.0.0-alpha.44"
   },
   "pnpm": {
     "overrides": {
-      "@typescript-eslint/utils": "8.0.0-alpha.39",
-      "@typescript-eslint/parser": "8.0.0-alpha.39"
+      "@typescript-eslint/utils": "8.0.0-alpha.44",
+      "@typescript-eslint/parser": "8.0.0-alpha.44"
     }
   }
 }
