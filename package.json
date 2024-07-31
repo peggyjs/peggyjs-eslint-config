@@ -1,6 +1,6 @@
 {
   "name": "@peggyjs/eslint-config",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Lint rules for peggyjs projects",
   "main": "index.js",
   "keywords": [
@@ -14,7 +14,10 @@
   },
   "author": "Joe Hildebrand <joe-github@cursive.net>",
   "license": "MIT",
-  "repository": "peggyjs/peggyjs-eslint-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peggyjs/peggyjs-eslint-config.git"
+  },
   "devDependencies": {
     "@cto.af/eslint-plugin-meta": "1.0.7",
     "@peggyjs/sort-rules": "link:sort-rules",
