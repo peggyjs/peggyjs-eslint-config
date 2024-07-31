@@ -13,18 +13,8 @@
   "license": "MIT",
   "devDependencies": {
     "@peggyjs/eslint-config": "file:../..",
-    "eslint": "9.7.0",
-    "eslint-plugin-mocha": "10.4.3",
-    "typescript": "5.5.3"
-  },
-  "overrides": {
-    "@typescript-eslint/utils": "8.0.0-alpha.44",
-    "@typescript-eslint/parser": "8.0.0-alpha.44"
-  },
-  "pnpm": {
-    "overrides": {
-      "@typescript-eslint/utils": "8.0.0-alpha.44",
-      "@typescript-eslint/parser": "8.0.0-alpha.44"
-    }
+    "eslint": "9.8.0",
+    "eslint-plugin-mocha": "10.5.0",
+    "typescript": "5.5.4"
   }
 }
