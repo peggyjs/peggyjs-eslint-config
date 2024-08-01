@@ -1,5 +1,6 @@
 .github/
 .ncurc
 eslint.config.js
+eslint.config.js
 node_modules/
 test/

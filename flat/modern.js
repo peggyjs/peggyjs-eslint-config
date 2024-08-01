@@ -5,6 +5,6 @@ const globals = require("globals");
 module.exports = {
   languageOptions: {
     globals: globals.node,
-    ecmaVersion: 2020,
+    ecmaVersion: 2022,
   },
 };
