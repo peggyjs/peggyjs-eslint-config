@@ -10,9 +10,9 @@
   },
   "devDependencies": {
     "@peggyjs/eslint-config": "file:../..",
-    "@typescript-eslint/eslint-plugin": "8.0.0",
-    "@typescript-eslint/parser": "8.0.0",
-    "eslint": "9.8.0",
-    "typescript": "5.5.4"
+    "@typescript-eslint/eslint-plugin": "8.6.0",
+    "@typescript-eslint/parser": "8.6.0",
+    "eslint": "9.11.0",
+    "typescript": "5.6.2"
   }
 }
