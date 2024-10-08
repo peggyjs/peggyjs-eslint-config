@@ -64,6 +64,7 @@ module.exports = {
     "@typescript-eslint/no-base-to-string": "off", // Can't config
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-confusing-void-expression": "off", // Can't config
+    "@typescript-eslint/no-deprecated": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
     "@typescript-eslint/no-duplicate-enum-values": "error",
     "@typescript-eslint/no-duplicate-type-constituents": "error",
