@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@eslint/json": "0.5.0",
+    "@eslint/markdown": "6.2.0",
     "@stylistic/eslint-plugin": "2.9.0",
     "globals": "15.11.0"
   },

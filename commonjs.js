@@ -1,6 +1,7 @@
 import globals from "globals";
 import ignores from "./ignores.js";
 import json from "./json.js";
+import markdown from "@eslint/markdown";
 import override from "./override.js";
 import { rules } from "./rules/js.js";
 import stylistic from "@stylistic/eslint-plugin";
@@ -21,4 +22,5 @@ export default [
   },
   ...override,
   ...json,
+  ...markdown.configs.recommended,
 ];
