@@ -1,5 +1,5 @@
 // Requires the optional peerDependencies be in place.
-import { rules } from "../rules/ts.js";
+import { rules } from "./rules/ts.js";
 import tslint from "typescript-eslint";
 
 const ts = {

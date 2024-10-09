@@ -1,5 +1,5 @@
 import globals from "globals";
-import { rules } from "../rules/js.js";
+import { rules } from "./rules/js.js";
 import stylistic from "@stylistic/eslint-plugin";
 
 export default [{
