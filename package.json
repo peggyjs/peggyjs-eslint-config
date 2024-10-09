@@ -2,7 +2,7 @@
   "name": "@peggyjs/eslint-config",
   "version": "4.0.4",
   "description": "Lint rules for peggyjs projects",
-  "main": "flat/commonjs.js",
+  "main": "./module.js",
   "type": "module",
   "keywords": [
     "peggy",
