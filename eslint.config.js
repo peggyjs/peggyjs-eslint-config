@@ -1,4 +1,4 @@
-import ignores from "./ignores.js";
+import json from "@eslint/json";
 import meta from "@cto.af/eslint-plugin-meta";
 import module from "./module.js";
 import stylistic from "@stylistic/eslint-plugin";
@@ -8,7 +8,6 @@ export default [
   {
     ignores: ["test/**"],
   },
-  ...ignores,
   ...module,
   {
     files: [
@@ -19,6 +18,7 @@ export default [
         libs: {
           "@stylistic": stylistic,
           "@typescript-eslint": ts,
+          json,
         },
       },
     },

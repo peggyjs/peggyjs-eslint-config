@@ -3,5 +3,6 @@ export default [{
     "node_modules/**",
     "coverage/**",
     "docs/**",
+    "**/*.min.js",
   ],
 }];

@@ -10,10 +10,8 @@ import mocha from "@peggyjs/eslint-config/flat/mocha.js";
 // Use commonjs if you're in an older project
 import module from "@peggyjs/eslint-config/flat/module.js";
 import ts from "@peggyjs/eslint-config/flat/ts.js";
-import ignores from "@peggyjs/eslint-config/flat/ignores.js";
 
 export default [
-  ...ignores,
   ...module,
   ...ts,
   ...mocha,
