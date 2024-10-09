@@ -1,20 +1,15 @@
-import cjs from "./flat/cjs.js";
-import js from "./flat/js.js";
+import ignores from "./flat/ignores.js";
 import meta from "@cto.af/eslint-plugin-meta";
-import mjs from "./flat/mjs.js";
-import { plugin } from "typescript-eslint";
+import module from "./flat/module.js";
 import stylistic from "@stylistic/eslint-plugin";
+import { plugin as ts } from "typescript-eslint";
 
 export default [
   {
-    ignores: [
-      "node_modules/**",
-      "test/**",
-    ],
+    ignores: ["test/**"],
   },
-  js,
-  cjs,
-  mjs,
+  ...ignores,
+  ...module,
   {
     files: [
       "rules/*.js",
@@ -23,7 +18,7 @@ export default [
       meta: {
         libs: {
           "@stylistic": stylistic,
-          "@typescript-eslint": plugin,
+          "@typescript-eslint": ts,
         },
       },
     },

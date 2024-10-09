@@ -9,8 +9,8 @@ export default [{
   },
   languageOptions: {
     globals: globals["shared-node-browser"],
-    ecmaVersion: 2020,
-    sourceType: "module",
+    ecmaVersion: 2018,
+    sourceType: "commonjs",
   },
   rules,
 },

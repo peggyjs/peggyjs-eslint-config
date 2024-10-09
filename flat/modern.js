@@ -1,10 +1,8 @@
-"use strict";
+import globals from "globals";
 
-const globals = require("globals");
-
-module.exports = {
+export default [{
   languageOptions: {
     globals: globals.node,
     ecmaVersion: 2022,
   },
-};
+}];

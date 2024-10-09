@@ -2,24 +2,32 @@
 
 For js-only projects:
 
-File: `.eslintrc.js` (or `.eslintrc.cjs` if you're type `"module"`):
+File: `eslint.config.js` (or `eslint.config.mjs` if you're in a project with
+type `"commonjs"`):
 
 ```js
-"use strict";
+import mocha from "@peggyjs/eslint-config/flat/mocha.js";
+// Use commonjs if you're in an older project
+import module from "@peggyjs/eslint-config/flat/module.js";
+import ts from "@peggyjs/eslint-config/flat/ts.js";
+import ignores from "@peggyjs/eslint-config/flat/ignores.js";
 
-module.exports = {
-  root: true,
-  extends: ["@peggyjs"],
-};
+export default [
+  ...ignores,
+  ...module,
+  ...ts,
+  ...mocha,
+];
 ```
 
-For projects that include typescript:
+If you include the ts config, you'll need to add dependencies:
 
-```js
-"use strict";
+```sh
+npm install -D typescript typescript-eslint
+```
 
-module.exports = {
-  root: true,
-  extends: ["@peggyjs", "@peggyjs/eslint-config/typescript"],
-};
+If you include the mocha config, you'll need to add dependencies:
+
+```sh
+npm install -D eslint-plugin-mocha
 ```

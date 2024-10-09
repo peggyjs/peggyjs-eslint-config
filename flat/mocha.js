@@ -1,14 +1,9 @@
-"use strict";
+import globals from "globals";
+import mocha from "eslint-plugin-mocha";
 
-const globals = require("globals");
-const mocha = require("eslint-plugin-mocha");
-
-module.exports = {
+export default [{
   files: [
-    "test/**/*.js",
-    "test/**/*.ts",
-    "test/**/*.cjs",
-    "test/**/*.mjs",
+    "test/**/*.{spec,test}.{js,ts,cjs,mjs}",
   ],
   languageOptions: {
     globals: globals.mocha,
@@ -20,4 +15,4 @@ module.exports = {
     ...mocha.configs.recommended.rules,
     "mocha/no-mocha-arrows": "off",
   },
-};
+}];
