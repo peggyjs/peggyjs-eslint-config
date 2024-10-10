@@ -2,14 +2,15 @@
   "name": "@peggyjs/eslint-config",
   "version": "4.0.4",
   "description": "Lint rules for peggyjs projects",
-  "main": "index.js",
+  "main": "./module.js",
+  "type": "module",
   "keywords": [
     "peggy",
     "eslint"
   ],
   "scripts": {
     "lint": "eslint .",
-    "test": "cd test/old && npm test && cd ../flat && npm test && cd ../flat-module && npm test",
+    "test": "(cd test/flat && npm test); (cd test/flat-module && npm test)",
     "ci": "npm run lint && npm run test"
   },
   "author": "Joe Hildebrand <joe-github@cursive.net>",
@@ -20,15 +21,16 @@
   },
   "devDependencies": {
     "@cto.af/eslint-plugin-meta": "1.1.1",
-    "@peggyjs/sort-rules": "link:sort-rules",
     "eslint": "^9.12.0",
     "eslint-plugin-mocha": "10.5.0",
-    "typescript": "^5.6.2",
+    "typescript": "^5.6.3",
     "typescript-eslint": "8.8.1"
   },
   "dependencies": {
+    "@eslint/json": "0.5.0",
+    "@eslint/markdown": "6.2.0",
     "@stylistic/eslint-plugin": "2.9.0",
-    "globals": "15.10.0"
+    "globals": "15.11.0"
   },
   "packageManager": "pnpm@9.12.1",
   "engines": {
