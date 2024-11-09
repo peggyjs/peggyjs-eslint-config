@@ -16,6 +16,9 @@ export default [{
   ],
   plugins: { json },
   language: "json/jsonc",
+  languageOptions: {
+    allowTrailingCommas: true,
+  },
   rules,
 },
 {
