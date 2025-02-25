@@ -20,19 +20,19 @@
     "url": "git+https://github.com/peggyjs/peggyjs-eslint-config.git"
   },
   "devDependencies": {
-    "@cto.af/eslint-plugin-meta": "1.1.1",
-    "eslint": "^9.17.0",
+    "@cto.af/eslint-plugin-meta": "1.1.2",
+    "eslint": "^9.21.0",
     "eslint-plugin-mocha": "10.5.0",
-    "typescript": "^5.7.2",
-    "typescript-eslint": "8.19.0"
+    "typescript": "^5.7.3",
+    "typescript-eslint": "8.25.0"
   },
   "dependencies": {
-    "@eslint/json": "0.9.0",
-    "@eslint/markdown": "6.2.1",
-    "@stylistic/eslint-plugin": "2.12.1",
-    "globals": "15.14.0"
+    "@eslint/json": "0.10.0",
+    "@eslint/markdown": "6.2.2",
+    "@stylistic/eslint-plugin": "4.0.1",
+    "globals": "16.0.0"
   },
-  "packageManager": "pnpm@9.15.2",
+  "packageManager": "pnpm@10.5.0",
   "engines": {
     "node": ">=18"
   }

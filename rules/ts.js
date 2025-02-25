@@ -83,6 +83,7 @@ export const rules = {
   "@typescript-eslint/no-meaningless-void-operator": "off", // Can't config
   "@typescript-eslint/no-misused-new": "error",
   "@typescript-eslint/no-misused-promises": "off", // Can't config
+  "@typescript-eslint/no-misused-spread": "off", // Can't turn off [...string]
   "@typescript-eslint/no-mixed-enums": "off", // Needs parser
   "@typescript-eslint/no-namespace": "error",
   "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
