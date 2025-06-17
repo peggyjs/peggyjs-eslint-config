@@ -104,6 +104,7 @@ export const rules = {
   "@typescript-eslint/no-unnecessary-type-arguments": "off", // Can't config
   "@typescript-eslint/no-unnecessary-type-assertion": "off", // Can't config
   "@typescript-eslint/no-unnecessary-type-constraint": "error",
+  "@typescript-eslint/no-unnecessary-type-conversion": "error",
   "@typescript-eslint/no-unnecessary-type-parameters": "error",
   "@typescript-eslint/no-unsafe-argument": "off", // Can't config
   "@typescript-eslint/no-unsafe-assignment": "off", // Can't config
@@ -152,7 +153,8 @@ export const rules = {
   "@typescript-eslint/strict-boolean-expressions": "off", // Can't config
   "@typescript-eslint/switch-exhaustiveness-check": "off", // Can't config
   "@typescript-eslint/triple-slash-reference": "error",
-  "@typescript-eslint/typedef": "error",
+  // Deprecated
+  // "@typescript-eslint/typedef": "error",
   "@typescript-eslint/unbound-method": "off", // Can't config
   "@typescript-eslint/unified-signatures": "off", // Too hard
   "@typescript-eslint/use-unknown-in-catch-callback-variable": "error",
