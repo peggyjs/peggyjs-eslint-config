@@ -22,8 +22,8 @@ importers:
         version: 16.2.0
     devDependencies:
       '@cto.af/eslint-plugin-meta':
-        specifier: 2.0.1
-        version: 2.0.1(eslint@9.29.0)
+        specifier: 2.0.2
+        version: 2.0.2(eslint@9.29.0)
       eslint:
         specifier: ^9.29.0
         version: 9.29.0
@@ -39,8 +39,8 @@ importers:
 
 packages:
 
-  '@cto.af/eslint-plugin-meta@2.0.1':
-    resolution: {integrity: sha512-iJEBwAYEiepPRBYvDwC78ACpCQwcA5lTp20F1EjMMy7qLhGEE9Dt40uZNyG+ioBGL0e1+ZzcMvYD/iGUOj0W2A==}
+  '@cto.af/eslint-plugin-meta@2.0.2':
+    resolution: {integrity: sha512-KR+0fyua+0FN76UuuVGRhb1NijuBreQwHVND9g/EbQG6NDOkvQOPGkvWqXrJhZsTsNKoLsIPxMIidCN7UntjOA==}
     engines: {node: '>=20'}
     peerDependencies:
       eslint: '>=9'
@@ -778,7 +778,7 @@ packages:
 
 snapshots:
 
-  '@cto.af/eslint-plugin-meta@2.0.1(eslint@9.29.0)':
+  '@cto.af/eslint-plugin-meta@2.0.2(eslint@9.29.0)':
     dependencies:
       eslint: 9.29.0
 
