@@ -12,8 +12,8 @@ importers:
         specifier: 0.12.0
         version: 0.12.0
       '@eslint/markdown':
-        specifier: 6.5.0
-        version: 6.5.0
+        specifier: 6.6.0
+        version: 6.6.0
       '@stylistic/eslint-plugin':
         specifier: 4.4.1
         version: 4.4.1(eslint@9.29.0)(typescript@5.8.3)
@@ -22,8 +22,8 @@ importers:
         version: 16.2.0
     devDependencies:
       '@cto.af/eslint-plugin-meta':
-        specifier: 2.0.0
-        version: 2.0.0(eslint@9.29.0)
+        specifier: 2.0.1
+        version: 2.0.1(eslint@9.29.0)
       eslint:
         specifier: ^9.29.0
         version: 9.29.0
@@ -39,8 +39,8 @@ importers:
 
 packages:
 
-  '@cto.af/eslint-plugin-meta@2.0.0':
-    resolution: {integrity: sha512-N5jP4oNG0I/nN6dchOTarC8Ntg1PlvreMDX+E6WTd5ayRpFsZN3+l0hK0E5iIeftZzALfyyR/piKvLTaCCPsTg==}
+  '@cto.af/eslint-plugin-meta@2.0.1':
+    resolution: {integrity: sha512-iJEBwAYEiepPRBYvDwC78ACpCQwcA5lTp20F1EjMMy7qLhGEE9Dt40uZNyG+ioBGL0e1+ZzcMvYD/iGUOj0W2A==}
     engines: {node: '>=20'}
     peerDependencies:
       eslint: '>=9'
@@ -91,8 +91,8 @@ packages:
     resolution: {integrity: sha512-n/7dz8HFStpEe4o5eYk0tdkBdGUS/ZGb0GQCeDWN1ZmRq67HMHK4vC33b0rQlTT6xdZoX935P4vstiWVk5Ying==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/markdown@6.5.0':
-    resolution: {integrity: sha512-oSkF0p8X21vKEEAGTZASi7q3tbdTvlGduQ02Xz2A1AFncUP4RLVcNz27XurxVW4fs1JXuh0xBtvokXdtp/nN+Q==}
+  '@eslint/markdown@6.6.0':
+    resolution: {integrity: sha512-IsWPy2jU3gaQDlioDC4sT4I4kG1hX1OMWs/q2sWwJrPoMASHW/Z4SDw+6Aql6EsHejGbagYuJbFq9Zvx+Y1b1Q==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/object-schema@2.1.6':
@@ -405,6 +405,9 @@ packages:
   format@0.2.2:
     resolution: {integrity: sha512-wzsgA6WOq+09wrU1tsJ09udeR/YZRaeArL9e1wPbFg3GG2yDnC2ldKpxs4xunpFF9DgqCqOIra3bc1HWrJ37Ww==}
     engines: {node: '>=0.4.x'}
+
+  github-slugger@2.0.0:
+    resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
 
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -775,7 +778,7 @@ packages:
 
 snapshots:
 
-  '@cto.af/eslint-plugin-meta@2.0.0(eslint@9.29.0)':
+  '@cto.af/eslint-plugin-meta@2.0.1(eslint@9.29.0)':
     dependencies:
       eslint: 9.29.0
 
@@ -835,10 +838,11 @@ snapshots:
       '@humanwhocodes/momoa': 3.3.8
       natural-compare: 1.4.0
 
-  '@eslint/markdown@6.5.0':
+  '@eslint/markdown@6.6.0':
     dependencies:
       '@eslint/core': 0.14.0
       '@eslint/plugin-kit': 0.3.2
+      github-slugger: 2.0.0
       mdast-util-from-markdown: 2.0.2
       mdast-util-frontmatter: 2.0.1
       mdast-util-gfm: 3.1.0
@@ -1201,6 +1205,8 @@ snapshots:
   flatted@3.3.3: {}
 
   format@0.2.2: {}
+
+  github-slugger@2.0.0: {}
 
   glob-parent@5.1.2:
     dependencies:
