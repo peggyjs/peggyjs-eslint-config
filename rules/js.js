@@ -127,7 +127,7 @@ export const rules = {
   // We have underscores in our public API already
   "camelcase": "off",
   "capitalized-comments": ["error", "always", {
-    ignorePattern: "c8",
+    ignorePattern: "(c8|webpackIgnore)",
     ignoreConsecutiveComments: true,
   }],
   "class-methods-use-this": "error",
@@ -443,7 +443,6 @@ export const rules = {
   "@stylistic/curly-newline": "off", // Too configurable
   "@stylistic/dot-location": ["error", "property"],
   "@stylistic/eol-last": "error",
-  "@stylistic/func-call-spacing": "off", // Renamed
   "@stylistic/function-call-argument-newline": ["error", "consistent"],
   "@stylistic/function-call-spacing": "error",
   "@stylistic/function-paren-newline": ["error", "consistent"],
