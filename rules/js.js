@@ -540,7 +540,12 @@ export const rules = {
   "@stylistic/semi-spacing": ["error", { before: false, after: true }],
   "@stylistic/semi-style": "error",
   "@stylistic/space-before-blocks": ["error", "always"],
-  "@stylistic/space-before-function-paren": ["error", "never"],
+  "@stylistic/space-before-function-paren": ["error", {
+    "anonymous": "never",
+    "named": "never",
+    "asyncArrow": "always",
+    "catch": "always",
+  }],
   "@stylistic/space-in-parens": ["error", "never"],
   "@stylistic/space-infix-ops": ["error", { "int32Hint": true }],
   "@stylistic/space-unary-ops": ["error", { words: true, nonwords: false }],
