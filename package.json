@@ -1,6 +1,6 @@
 {
   "name": "@peggyjs/eslint-config",
-  "version": "6.0.5",
+  "version": "6.0.6",
   "description": "Lint rules for peggyjs projects",
   "main": "./module.js",
   "type": "module",
