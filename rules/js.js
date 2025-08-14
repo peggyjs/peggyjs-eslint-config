@@ -95,10 +95,15 @@ export const rules = {
   "no-unsafe-optional-chaining": "error",
   "no-unused-private-class-members": "off", // Not using private yet
   "no-unused-vars": ["error", {
+    args: "all",
     argsIgnorePattern: "^_",
+    caughtErrors: "all",
     caughtErrorsIgnorePattern: "^(_|ignore)",
     destructuredArrayIgnorePattern: "^_",
+    vars: "all",
     varsIgnorePattern: "^_[^_]",
+    ignoreRestSiblings: false,
+    ignoreUsingDeclarations: false,
     reportUsedIgnorePattern: true,
   }],
 

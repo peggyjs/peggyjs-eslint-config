@@ -117,7 +117,17 @@ export const rules = {
   "@typescript-eslint/no-unsafe-type-assertion": "off", // Used all the time
   "@typescript-eslint/no-unsafe-unary-minus": "error",
   "@typescript-eslint/no-unused-expressions": "error",
-  "@typescript-eslint/no-unused-vars": ["error", { "varsIgnorePattern": "^_" }],
+  "@typescript-eslint/no-unused-vars": ["error", {
+    args: "all",
+    argsIgnorePattern: "^_",
+    caughtErrors: "all",
+    caughtErrorsIgnorePattern: "^_",
+    destructuredArrayIgnorePattern: "^_",
+    vars: "all",
+    varsIgnorePattern: "^_",
+    ignoreRestSiblings: false,
+    reportUsedIgnorePattern: true,
+  }],
   "@typescript-eslint/no-use-before-define": "error",
   "@typescript-eslint/no-useless-constructor": "error",
   "@typescript-eslint/no-useless-empty-export": "error",
