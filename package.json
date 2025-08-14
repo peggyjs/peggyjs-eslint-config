@@ -22,15 +22,15 @@
   "dependencies": {
     "@eslint/json": "0.13.1",
     "@eslint/markdown": "7.1.0",
-    "@stylistic/eslint-plugin": "5.2.2",
+    "@stylistic/eslint-plugin": "5.2.3",
     "globals": "16.3.0"
   },
   "devDependencies": {
     "@cto.af/eslint-plugin-meta": "2.0.3",
-    "eslint": "^9.32.0",
+    "eslint": "^9.33.0",
     "eslint-plugin-mocha": "11.1.0",
     "typescript": "^5.9.2",
-    "typescript-eslint": "8.39.0"
+    "typescript-eslint": "8.39.1"
   },
   "packageManager": "pnpm@10.14.0",
   "engines": {
