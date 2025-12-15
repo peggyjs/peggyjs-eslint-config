@@ -12,8 +12,8 @@
   "license": "MIT",
   "devDependencies": {
     "@peggyjs/eslint-config": "file:../..",
-    "eslint": "9.33.0",
-    "eslint-plugin-mocha": "11.1.0",
-    "typescript": "5.9.2"
+    "eslint": "9.39.2",
+    "eslint-plugin-mocha": "11.2.0",
+    "typescript": "5.9.3"
   }
 }

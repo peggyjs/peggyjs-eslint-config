@@ -117,6 +117,7 @@ export const rules = {
   "@typescript-eslint/no-unsafe-type-assertion": "off", // Used all the time
   "@typescript-eslint/no-unsafe-unary-minus": "error",
   "@typescript-eslint/no-unused-expressions": "error",
+  "@typescript-eslint/no-unused-private-class-members": "error",
   "@typescript-eslint/no-unused-vars": ["error", {
     args: "all",
     argsIgnorePattern: "^_",

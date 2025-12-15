@@ -388,6 +388,7 @@ export const rules = {
   // Disabled because the decision between using string concatenation or a
   // template literal is a subtle one and it shouldn't be done mechanically.
   "prefer-template": "off",
+  "preserve-caught-error": "error",
 
   // Set to require a radix even though it always defaults to 10 in ES5+. It
   // prevents confusion.
@@ -448,6 +449,17 @@ export const rules = {
   "@stylistic/curly-newline": "off", // Too configurable
   "@stylistic/dot-location": ["error", "property"],
   "@stylistic/eol-last": "error",
+
+  // Still experimental
+  "@stylistic/exp-list-style": ["off", {
+    singleLine: {
+      spacing: "always",
+      maxItems: Number.POSITIVE_INFINITY,
+    },
+    multiLine: {
+      minItems: 2,
+    },
+  }],
   "@stylistic/function-call-argument-newline": ["error", "consistent"],
   "@stylistic/function-call-spacing": "error",
   "@stylistic/function-paren-newline": ["error", "consistent"],
@@ -474,7 +486,8 @@ export const rules = {
   "@stylistic/jsx-newline" : "off",
   "@stylistic/jsx-one-expression-per-line" : "off",
   "@stylistic/jsx-pascal-case": "off",
-  "@stylistic/jsx-props-no-multi-spaces" : "off",
+  // Deprecated
+  // "@stylistic/jsx-props-no-multi-spaces" : "off",
   "@stylistic/jsx-quotes": "off",
   "@stylistic/jsx-self-closing-comp" : "off",
   "@stylistic/jsx-sort-props" : "off",
