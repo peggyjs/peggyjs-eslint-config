@@ -131,6 +131,7 @@ export const rules = {
   }],
   "@typescript-eslint/no-use-before-define": "error",
   "@typescript-eslint/no-useless-constructor": "error",
+  "@typescript-eslint/no-useless-default-assignment": "error",
   "@typescript-eslint/no-useless-empty-export": "error",
   "@typescript-eslint/no-wrapper-object-types": "error",
   "@typescript-eslint/non-nullable-type-assertion-style": "off", // Can't config
@@ -162,6 +163,7 @@ export const rules = {
   "@typescript-eslint/restrict-template-expressions": "off", // Can't config
   "@typescript-eslint/return-await": "off", // Can't config
   "@typescript-eslint/strict-boolean-expressions": "off", // Can't config
+  "@typescript-eslint/strict-void-return": "error",
   "@typescript-eslint/switch-exhaustiveness-check": "off", // Can't config
   "@typescript-eslint/triple-slash-reference": "error",
   // Deprecated

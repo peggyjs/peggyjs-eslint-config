@@ -451,6 +451,9 @@ export const rules = {
   "@stylistic/eol-last": "error",
 
   // Still experimental
+  "@stylistic/exp-jsx-props-style": "off",
+
+  // Still experimental
   "@stylistic/exp-list-style": ["off", {
     singleLine: {
       spacing: "always",
@@ -490,7 +493,6 @@ export const rules = {
   // "@stylistic/jsx-props-no-multi-spaces" : "off",
   "@stylistic/jsx-quotes": "off",
   "@stylistic/jsx-self-closing-comp" : "off",
-  "@stylistic/jsx-sort-props" : "off",
   "@stylistic/jsx-tag-spacing" : "off",
   "@stylistic/jsx-wrap-multilines" : "off",
 
