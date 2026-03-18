@@ -1,33 +1,12 @@
 name: Tests
-
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
-
+    branches: [main]
 jobs:
   build:
-
-    strategy:
-      matrix:
-        node-version: [20, 22, 24, 25]
-        os: [ubuntu-latest]
-
-    runs-on: ${{ matrix.os }}
-
-    steps:
-      - uses: actions/checkout@v6
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v6
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: pnpm
-      - name: Install dependencies
-        run: pnpm i -r
-      - name: Check coding standards and run tests
-        run: npm run ci
+    uses: cto-af/workflows/.github/workflows/node-ci.yml@main
+    with:
+      script: ci
+    secrets: inherit
