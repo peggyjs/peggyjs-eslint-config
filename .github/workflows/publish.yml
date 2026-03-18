@@ -7,5 +7,5 @@ jobs:
   publish:
     uses: cto-af/workflows/.github/workflows/publish.yml@main
     permissions:
-      contents: read
+      contents: write
       id-token: write
