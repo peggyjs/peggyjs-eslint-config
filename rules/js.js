@@ -425,11 +425,11 @@ export const rules = {
   "unicode-bom": ["error", "never"],
 
   // [Stylistc](https://eslint.style/packages/default)
-  "@stylistic/array-bracket-newline": ["error", "consistent"],
-  "@stylistic/array-bracket-spacing": ["error", "never"],
+  // "@stylistic/array-bracket-newline": ["error", "consistent"], // Deprecated
+  // "@stylistic/array-bracket-spacing": ["error", "never"], // Deprecated
 
   // There are a few files where we use spacing in arrays to our advantage
-  "@stylistic/array-element-newline": "off",
+  // "@stylistic/array-element-newline": "off", // Deprecated
   "@stylistic/arrow-parens": ["error", "as-needed"],
   "@stylistic/arrow-spacing": "error",
   "@stylistic/block-spacing": ["error", "always"],
@@ -453,19 +453,9 @@ export const rules = {
   // Still experimental
   "@stylistic/exp-jsx-props-style": "off",
 
-  // Still experimental
-  "@stylistic/exp-list-style": ["off", {
-    singleLine: {
-      spacing: "always",
-      maxItems: Number.POSITIVE_INFINITY,
-    },
-    multiLine: {
-      minItems: 2,
-    },
-  }],
-  "@stylistic/function-call-argument-newline": ["error", "consistent"],
+  // "@stylistic/function-call-argument-newline": ["error", "consistent"], // Deprecated
   "@stylistic/function-call-spacing": "error",
-  "@stylistic/function-paren-newline": ["error", "consistent"],
+  // "@stylistic/function-paren-newline": ["error", "consistent"], // Deprecated
   "@stylistic/generator-star-spacing": ["error", "after"],
   "@stylistic/implicit-arrow-linebreak": "error",
   "@stylistic/indent": ["error", 2, {
@@ -493,6 +483,8 @@ export const rules = {
   // "@stylistic/jsx-props-no-multi-spaces" : "off",
   "@stylistic/jsx-quotes": "off",
   "@stylistic/jsx-self-closing-comp" : "off",
+  "@stylistic/jsx-shorthand-boolean": "off",
+  "@stylistic/jsx-shorthand-fragment": "off",
   "@stylistic/jsx-tag-spacing" : "off",
   "@stylistic/jsx-wrap-multilines" : "off",
 
@@ -504,6 +496,28 @@ export const rules = {
   "@stylistic/lines-around-comment": "off",
   "@stylistic/lines-between-class-members": ["error", "always", {
     exceptAfterSingleLine: true,
+  }],
+  "@stylistic/list-style": ["error", {
+    empty: "never",
+    singleLine: {
+      spacing: "always",
+      maxItems: Infinity,
+    },
+    multiLine: {
+      minItems: 1,
+    },
+    overrides: {
+      "()": {
+        singleLine: {
+          spacing: "never",
+        },
+      },
+      "[]": {
+        singleLine: {
+          spacing: "never",
+        },
+      },
+    },
   }],
 
   // Set to ignore lines that contain strings and template literals because
@@ -543,9 +557,9 @@ export const rules = {
   "@stylistic/no-trailing-spaces": "error",
   "@stylistic/no-whitespace-before-property": "error",
   "@stylistic/nonblock-statement-body-position": "error",
-  "@stylistic/object-curly-newline": "error",
-  "@stylistic/object-curly-spacing": ["error", "always"],
-  "@stylistic/object-property-newline": "off",
+  // "@stylistic/object-curly-newline": "error", // Deprecated
+  // "@stylistic/object-curly-spacing": ["error", "always"], // Deprecated
+  // "@stylistic/object-property-newline": "off", // Deprecated
   // Disabled because `one-var` doesn't allow multiple initialized variable
   // declarations in one `let`/`const`/`var` statement and it doesn't make
   // sense to put each uninitialized variable on a separate line.
