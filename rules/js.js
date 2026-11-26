@@ -517,6 +517,11 @@ export const rules = {
           spacing: "never",
         },
       },
+      "<>": {
+        singleLine: {
+          spacing: "never",
+        },
+      },
     },
   }],
 
