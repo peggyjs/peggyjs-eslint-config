@@ -1,6 +1,9 @@
+.devcontainer/
+.editorconfig
 .github/
 .ncurc
-eslint.config.mjs
+.pnpm-store/
+eslint.config.js
 node_modules/
+pnpm-workspace.yaml
 test/
-.editorconfig
